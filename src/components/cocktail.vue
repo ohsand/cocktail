@@ -49,15 +49,16 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     flex-direction: column;
     font-size: medium;
     border-radius: 15px;
-    border: 3px solid #04383F;
-    margin: 15px 30px;
+    border: 4px solid #04383F;
+    margin: 30px 50px;
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    position: relative;
+    box-shadow: 2px 2px 8px 0px #000000;
 }
 
 .container img {
-    /* margin-top: 65px; */
     object-fit: cover;
     scale: .45;
     width: max-content;
@@ -70,21 +71,23 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     align-items: center;
     flex-wrap: wrap;
     margin-top: 50px;
+    position: relative;
 }
 
 #cocktails h2 {
     background-color: #04383F;
     color: white;
-    width: 300px;
+    width: 308px;
     /* position: relative;
     bottom: 260px;
     height: fit-content; */
     overflow: hidden;
     position: absolute;
-    bottom: 430px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 10px 0px;
+    bottom: -20px;
+    /* bottom: 430px; */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 5px 0px;
     border-top: 2px white solid;
 }
 </style>
