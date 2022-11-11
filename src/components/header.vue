@@ -1,6 +1,7 @@
 <template>
     <header>
-       <h1>Cocktail Finder</h1>
+       <!-- <h1>Cocktail Finder</h1> -->
+       <img src="../assets/logowhite.png" alt="cocktail finder logo white" />
     </header>
 </template>
 
@@ -16,7 +17,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 150px;
-    background-color: black;
+    background-color: #04383F;
     color: white;
 }
 </style>
