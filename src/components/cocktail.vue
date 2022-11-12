@@ -1,21 +1,21 @@
 <template>
     <div id="cocktails">
-        <button @click="isShow()" class="container">
+        <button @click="isShowOne()" class="container">
             <img :src="data.drinks[0].strDrinkThumb" />
             <h2>{{ data.drinks[0].strDrink }}</h2>
         </button>
 
-        <a href="#" class="container">
+        <button @click="isShowTwo()" class="container">
             <img :src="datatwo.drinks[0].strDrinkThumb" />
             <h2>{{ datatwo.drinks[0].strDrink }}</h2>
-        </a>
+        </button>
 
-        <a href="#" class="container">
+        <button @click="isShowThree()" class="container">
             <img :src="datathree.drinks[0].strDrinkThumb" />
             <h2>{{ datathree.drinks[0].strDrink }}</h2>
-        </a>
+        </button>
     </div>
-
+<!-- Cocktail one -->
     <div class="fullpage visibility" id="fullpageone">
         <div class="cocktailheader">
             <img :src="data.drinks[0].strDrinkThumb+`/preview`" />
@@ -34,6 +34,45 @@
         </div>
         <p id="instructions">{{ data.drinks[0].strInstructions }}</p>
     </div>
+
+<!-- Cocktail two -->
+    <div class="fullpage visibility" id="fullpagetwo">
+            <div class="cocktailheader">
+                <img :src="datatwo.drinks[0].strDrinkThumb+`/preview`" />
+                    <div class="details">
+                        <h2>{{ datatwo.drinks[0].strDrink }} <small>({{ datatwo.drinks[0].strAlcoholic }})</small></h2>
+                        <p>Drink category: {{ datatwo.drinks[0].strCategory }}</p>
+                        <p>Glass type: {{ data.drinks[0].strGlass }}</p>
+                        <p>Ingredients:</p>
+                        <p>{{ datatwo.drinks[0].strIngredient1 }} {{ datatwo.drinks[0].strMeasure1 }}</p>
+                        <p>{{ datatwo.drinks[0].strIngredient2 }} {{ datatwo.drinks[0].strMeasure2 }}</p>
+                        <p>{{ datatwo.drinks[0].strIngredient3 }} {{ datatwo.drinks[0].strMeasure3 }}</p>
+                        <p>{{ datatwo.drinks[0].strIngredient4 }} {{ datatwo.drinks[0].strMeasure4 }}</p>
+                        <p>{{ datatwo.drinks[0].strIngredient5 }} {{ datatwo.drinks[0].strMeasure5 }}</p>
+                        <p>{{ datatwo.drinks[0].strIngredient6 }} {{ datatwo.drinks[0].strMeasure6 }}</p>
+                    </div>
+            </div>
+            <p id="instructions">{{ datatwo.drinks[0].strInstructions }}</p>
+        </div>
+<!-- Cocktail three -->
+    <div class="fullpage visibility" id="fullpagethree">
+            <div class="cocktailheader">
+                <img :src="datathree.drinks[0].strDrinkThumb+`/preview`" />
+                    <div class="details">
+                        <h2>{{ datathree.drinks[0].strDrink }} <small>({{ datathree.drinks[0].strAlcoholic }})</small></h2>
+                        <p>Drink category: {{ data.drinks[0].strCategory }}</p>
+                        <p>Glass type: {{ data.drinks[0].strGlass }}</p>
+                        <p>Ingredients:</p>
+                        <p>{{ datathree.drinks[0].strIngredient1 }} {{ datathree.drinks[0].strMeasure1 }}</p>
+                        <p>{{ datathree.drinks[0].strIngredient2 }} {{ datathree.drinks[0].strMeasure2 }}</p>
+                        <p>{{ datathree.drinks[0].strIngredient3 }} {{ datathree.drinks[0].strMeasure3 }}</p>
+                        <p>{{ datathree.drinks[0].strIngredient4 }} {{ datathree.drinks[0].strMeasure4 }}</p>
+                        <p>{{ datathree.drinks[0].strIngredient5 }} {{ datathree.drinks[0].strMeasure5 }}</p>
+                        <p>{{ datathree.drinks[0].strIngredient6 }} {{ datathree.drinks[0].strMeasure6 }}</p>
+                    </div>
+            </div>
+            <p id="instructions">{{ datathree.drinks[0].strInstructions }}</p>
+        </div>
 </template>
 
 <script setup>
@@ -63,12 +102,19 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
 <script>
     export default {
         methods: {
-            isShow() {
+            isShowOne() {
                 var obj = document.getElementById("fullpageone");
                 obj.classList.toggle("visibility");
-
+            },
+            isShowTwo() {
+                var obj = document.getElementById("fullpagetwo");
+                obj.classList.toggle("visibility");
+            },
+            isShowThree() {
+                var obj = document.getElementById("fullpagethree");
+                obj.classList.toggle("visibility");
+            }
         }
-    }
     }
 </script>
 
