@@ -255,6 +255,14 @@ button:hover {
   #instructions {
     margin: 0;
   }
+
+  #cocktails {
+    margin-top: 20px;
+  }
+
+  .container {
+    margin: 20px;
+  }
 }
 
 </style>
