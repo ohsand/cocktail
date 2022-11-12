@@ -1,6 +1,6 @@
 <template>
     <div id="cocktails">
-        <button onclick="showDiv()" class="container">
+        <button @click="isShow()" class="container">
             <img :src="data.drinks[0].strDrinkThumb" />
             <h2>{{ data.drinks[0].strDrink }}</h2>
         </button>
@@ -16,7 +16,7 @@
         </a>
     </div>
 
-    <div class="fullpage">
+    <div class="fullpage visibility" id="fullpageone">
         <div class="cocktailheader">
             <img :src="data.drinks[0].strDrinkThumb+`/preview`" />
                 <div class="details">
@@ -63,10 +63,12 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
 <script>
     export default {
         methods: {
-        showDiv () {
-            document.getElementsByClassName('fullpage').element.style.setProperty('display', 'block');
+            isShow() {
+                var obj = document.getElementById("fullpageone");
+                obj.classList.toggle("visibility");
+
         }
-        }
+    }
     }
 </script>
 
@@ -127,7 +129,6 @@ button:hover {
 .fullpage {
     height: 100%;
     max-width: 1050px;
-    display: none;
     margin: auto;
     border-radius: 15px;
     border: 4px solid #04383F;
@@ -139,6 +140,11 @@ button:hover {
     flex-direction: column;
     color: white;
     text-align: left;
+}
+
+.visibility {
+    /* visibility: hidden !important; */
+    display: none;
 }
 
 .fullpage img {
@@ -189,7 +195,6 @@ button:hover {
   }
 
   .fullpage {
-    display: flex;
     justify-content: center;
     align-items: center;
     max-width: 350px;
