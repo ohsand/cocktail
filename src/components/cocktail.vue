@@ -105,14 +105,67 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
             isShowOne() {
                 var obj = document.getElementById("fullpageone");
                 obj.classList.toggle("visibility");
+                window.location.href = '#fullpageone';
+                var obj2 = document.getElementById("fullpagetwo");
+                var obj3 = document.getElementById("fullpagethree");
+                if (obj2.classList.contains('visibility')) {
+                    if (obj3.classList.contains('visibility')) {
+                        return;
+                    } else {
+                        obj3.classList.toggle("visibility");
+                    }
+                } else {
+                    obj2.classList.toggle("visibility");
+                    if (obj3.classList.contains('visibility')) {
+                        return;
+                    } else {
+                        obj3.classList.toggle("visibility");
+                    }
+                }
+
             },
             isShowTwo() {
-                var obj = document.getElementById("fullpagetwo");
-                obj.classList.toggle("visibility");
+                var obj2 = document.getElementById("fullpagetwo");
+                obj2.classList.toggle("visibility");
+                window.location.href = '#fullpagetwo';
+                var obj1 = document.getElementById("fullpageone");
+                var obj3 = document.getElementById("fullpagethree");
+                if (obj1.classList.contains('visibility')) {
+                    if (obj3.classList.contains('visibility')) {
+                        return;
+                    } else {
+                        obj3.classList.toggle("visibility");
+                    }
+                } else {
+                    obj1.classList.toggle("visibility");
+                    if (obj3.classList.contains('visibility')) {
+                        return;
+                    } else {
+                        obj3.classList.toggle("visibility");
+                    }
+                }
             },
             isShowThree() {
-                var obj = document.getElementById("fullpagethree");
-                obj.classList.toggle("visibility");
+                var obj3 = document.getElementById("fullpagethree");
+                obj3.classList.toggle("visibility");
+                window.location.href = '#fullpagethree';
+                var obj2 = document.getElementById("fullpagetwo");
+                var obj1 = document.getElementById("fullpageone");
+                if (obj2.classList.contains('visibility')) {
+                    if (obj1.classList.contains('visibility')) {
+                        return;
+                    } else {
+                        obj1.classList.toggle("visibility");
+                    }
+                } else {
+                    obj2.classList.toggle("visibility");
+                    if (obj1.classList.contains('visibility')) {
+                        return;
+                    } else {
+                        obj1.classList.toggle("visibility");
+                    }
+                }
+
             }
         }
     }
@@ -189,7 +242,6 @@ button:hover {
 }
 
 .visibility {
-    /* visibility: hidden !important; */
     display: none;
 }
 

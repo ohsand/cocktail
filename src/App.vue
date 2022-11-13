@@ -1,5 +1,6 @@
 <template>
   <WebpageHeader />
+  <ShakerText />
   <MainpageCocktail />
   
 </template>
@@ -7,12 +8,15 @@
 <script>
 import WebpageHeader from './components/header'
 import MainpageCocktail from './components/cocktail'
+import ShakerText from './components/shakertext'
+
 
 export default {
   name: 'App',
   components: {
     WebpageHeader,
-    MainpageCocktail
+    MainpageCocktail,
+    ShakerText
   }
 }
 
