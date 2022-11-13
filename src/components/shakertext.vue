@@ -16,6 +16,13 @@ h2 {
     justify-content: center;
     align-items: center;
     color: #04383F;
+    margin-top: 30px;
+}
+
+@media screen and (min-width: 800px) {
+  h2 {
+    margin-bottom: -30px;
+  }
 }
 
 </style>

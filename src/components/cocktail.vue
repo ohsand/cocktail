@@ -296,6 +296,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     max-width: 350px;
+    overflow: hidden;
   }
 
   .details {
